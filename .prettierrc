@@ -1,4 +1,15 @@
 {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "typescript.preferences.quoteStyle": "single",
+    "editor.tabSize": 2,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.requireConfig": false,
+    "prettier.singleQuote": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "files.associations": {
+    }
 }

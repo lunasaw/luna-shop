@@ -2,6 +2,7 @@
   <div class='hello'>
     <h1>{{ msg }}</h1>
     <el-button type='info' @click='loginOut'>退出</el-button>
+    <el-button type='info' @click='mainInfo'>主页</el-button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -42,6 +43,9 @@ export default {
     loginOut () {
       window.sessionStorage.removeItem('token')
       this.$router.push('/login')
+    },
+    mainInfo () {
+      this.$router.push('/main')
     }
   }
 }
