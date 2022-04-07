@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import UserLogin from '@/components/UserLogin.vue'
 import ShopHome from '@/components/ShopHome.vue'
 import LearnVue from '@/components/LearnVue.vue'
+import ComposeVue from '@/components/ComposeVue.vue'
 const routes = [
   {
     path: '/login',
@@ -13,6 +14,11 @@ const routes = [
     path: '/learnVue',
     name: 'learnVue',
     component: LearnVue
+  },
+  {
+    path: '/composeVue',
+    name: 'composeVue',
+    component: ComposeVue
   },
   {
     path: '/main',
