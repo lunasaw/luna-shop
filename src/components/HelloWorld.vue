@@ -3,6 +3,8 @@
     <h1>{{ msg }}</h1>
     <el-button type='info' @click='loginOut'>退出</el-button>
     <el-button type='warning' @click='mainInfo'>主页</el-button>
+    <el-button type='danger' @click='learnVue'>示例</el-button>
+
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -46,6 +48,9 @@ export default {
     },
     mainInfo () {
       this.$router.push('/main')
+    },
+    learnVue () {
+      this.$router.push('/learnVue')
     }
   }
 }
