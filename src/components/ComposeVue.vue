@@ -4,7 +4,7 @@
     <br>
     <component-b></component-b>
     <div class="post-demo">
-      <blog-post title="My journey with Vue" author="journey" :showButton="true"></blog-post>
+      <blog-post title="My journey with Vue" author="journey" :postFontSize='postFontSize' :showButton="true" @enlarge-text="enlargeText" ></blog-post>
       <blog-post title="Blogging with Vue" :postFontSize='2'></blog-post>
       <blog-post title="Why Vue is so fun" :showButton='showButton'></blog-post>
     </div>
@@ -29,6 +29,13 @@ export default {
       ],
       postFontSize: 1,
       showButton: false
+    }
+  },
+  methods: {
+    enlargeText: function (enlargeAmount) {
+      console.log('传入的参数：' + enlargeAmount)
+      this.postFontSize += enlargeAmount
+      console.log('postFontSize参数：' + this.postFontSize)
     }
   }
 }

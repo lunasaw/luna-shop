@@ -6,17 +6,21 @@
     <date-picker @change="showChange" data-status="activated"></date-picker>
   </div>
   <custom-layout id="custom-layout" @click="changeValue(this)"></custom-layout>
+
+  <ComponentC></ComponentC>
 </template>
 
 <script>
 import ComponentA from './ComponentA.vue'
 import DatePicker from './DatePicker.vue'
 import CustomLayout from './CustomLayout.vue'
+import ComponentC from './ComponentC.vue'
 export default {
   components: {
     ComponentA,
     DatePicker,
-    CustomLayout
+    CustomLayout,
+    ComponentC
   },
   data () {
     return {

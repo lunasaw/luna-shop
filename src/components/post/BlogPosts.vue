@@ -19,6 +19,7 @@ export default {
     }
   },
   methods: {
+    // 那么这个值将会作为第一个参数传入这个方法：
     enlargeText: function (enlargeAmount) {
       this.postFont += enlargeAmount
     },
