@@ -35,7 +35,7 @@ export default {
     enlargeText: function (enlargeAmount) {
       console.log('传入的参数：' + enlargeAmount)
       this.postFontSize += enlargeAmount
-      console.log('postFontSize参数：' + this.postFontSize)
+      console.log('postFontSize参数:' + this.postFontSize)
     }
   }
 }
