@@ -2,8 +2,7 @@
   <div id="components-demo">
     <button-counter></button-counter>
     <br>
-    <button-counter></button-counter>
-
+    <component-b></component-b>
     <div class="post-demo">
       <blog-post title="My journey with Vue" author="journey" :showButton="true"></blog-post>
       <blog-post title="Blogging with Vue" :postFontSize='2'></blog-post>
@@ -18,8 +17,9 @@
 import ButtonCounter from '@/components/post/ButtonCounter.vue'
 import BlogPost from '@/components/post/BlogPost.vue'
 import BlogPosts from '@/components/post/BlogPosts.vue'
+import ComponentB from '@/components/post/ComponentB.vue'
 export default {
-  components: { ButtonCounter, BlogPost, BlogPosts },
+  components: { ButtonCounter, BlogPost, BlogPosts, ComponentB },
   data () {
     return {
       posts: [
