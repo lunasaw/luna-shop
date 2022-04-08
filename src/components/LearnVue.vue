@@ -38,12 +38,45 @@
   <h4>姓名:: {{name}}</h4>
   <h4>年龄:: {{age}}</h4>
   <h4>生日:: {{birthday}}</h4>
+
+  <br>
+  <el-form>
+    <el-form-item label="小明">
+      <el-input type="number" v-model="userAgeOne" @blur="value=Number(userAgeOne)" placeholder="输入年龄" prefix-icon='el-icon-user'></el-input>
+    </el-form-item>
+    <el-form-item label="小红">
+      <el-input type="number" placeholder="输入年龄" @blur="value=Number(userAgeTwo)" v-model="userAgeTwo" prefix-icon='el-icon-user'></el-input>
+    </el-form-item>
+    <el-form-item label="小红+小明">
+      <el-input type="number" placeholder="年龄求和" v-model="userAgeSum" prefix-icon='el-icon-user'></el-input>
+    </el-form-item>
+  </el-form>
+
+  <br>
+  <input type="number" v-model="numberOne">
+  <input type="number" v-model="numberTwo">
+  <input type="number" v-model="numberThree">
 </template>
 
 <script>
-import { reactive, ref, toRef, toRefs } from 'vue'
+import { reactive, ref, toRef, toRefs, computed } from 'vue'
 export default {
   setup () {
+    const userAge = {
+      userAgeOne: '',
+      userAgeTwo: ''
+    }
+    const userAgeRes = reactive(userAge)
+    const userAgeSum = computed(() => {
+      return Number(userAgeRes.userAgeOne) + userAgeRes.userAgeTwo
+    })
+
+    const numberOne = ref(0)
+    const numberTwo = ref(1)
+    const numberThree = computed(() => {
+      return numberOne.value + numberTwo.value
+    })
+
     const res = 123
     const arr = [1, 2, 3]
     function btn () {
@@ -118,7 +151,12 @@ export default {
     }
 
     return {
+      numberOne,
+      numberTwo,
+      numberThree,
+      userAgeSum,
       ...toRefs(object),
+      ...toRefs(userAgeRes),
       toRefsObject,
       refNum,
       refObject,
