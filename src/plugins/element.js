@@ -2,7 +2,7 @@ import {
   ElButton, ElInput, ElForm, ElFormItem, ElMessage,
   ElContainer, ElHeader, ElMain, ElFooter, ElAside, ElMenu, ElSubmenu, ElMenuItem,
   ElMenuItemGroup, ElScrollbar, ElSelect, ElOption, ElOptionGroup, ElRadio, ElRadioGroup,
-  ElIcon
+  ElIcon, ElCheckbox, ElSwitch, ElCheckboxGroup, ElCol, ElDatePicker, ElTimePicker
 } from 'element-plus'
 
 import * as ElIconModules from '@element-plus/icons-vue'
@@ -30,6 +30,13 @@ export default (app) => {
   app.use(ElIcon)
   app.use(ElIconModules)
   app.use(ElMessage)
+  app.use(ElCheckbox)
+  app.use(ElSwitch)
+  app.use(ElCheckboxGroup)
+  app.use(ElCol)
+  app.use(ElDatePicker)
+  app.use(ElTimePicker)
+
   // 挂在Vue原型
   app.config.globalProperties.$message = ElMessage
 

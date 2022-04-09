@@ -1,14 +1,13 @@
 <template>
   <h4>组件传值</h4>
   <div class="back">
-    <h3>这是父组件</h3>
+    <h3>这是父组件ComponentD</h3>
     <h4>{{father}}</h4>
     <el-button @click="changeFather">点击触发</el-button>
     <el-button @click="messageLog">点击触发</el-button>
-        <el-button @click="printLog">点击触发</el-button>
-
+    <el-button @click="printLog">点击触发</el-button>
+    <ComponentE ref="val"></ComponentE>
   </div>
-  <ComponentE ref="val"></ComponentE>
 </template>
 
 <script>
@@ -36,7 +35,6 @@ export default {
     })
     provide('father', father)
     const changeFather = () => {
-      console.log(this)
       val.value.childFunc('我是你爸爸')
     }
     let setStx = ''
@@ -63,5 +61,6 @@ export default {
 .back {
   background: rgb(99, 109, 176);
   padding: 10px;
+   text-align: center;
 }
 </style>>

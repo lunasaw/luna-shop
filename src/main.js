@@ -4,6 +4,7 @@ import router from './router'
 import installElementPlus from './plugins/element'
 import '@/assets/css/global.css'
 import axios from 'axios'
+import store from './store'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
   // console.log(config)
@@ -12,7 +13,7 @@ axios.interceptors.request.use(config => {
   return config
 })
 
-const app = createApp(App)
+const app = createApp(App).use(store)
 
 app.config.globalProperties.$http = axios
 app.config.productionTip = false
