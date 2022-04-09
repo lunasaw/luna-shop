@@ -10,17 +10,28 @@
     <el-input v-model="numberTwo" type="textarea" label="监听数据" :autosize="{ minRows: 2, maxRows: 4 }"></el-input>
 
     <el-button @click="number ++ ">触发事件</el-button>
-        <el-button @click="numberTwo +=2 ">触发事件2</el-button>
+    <el-button @click="numberTwo +=2 ">触发事件2</el-button>
 
-    <el-input v-model="user.age.num" type="text"  placeholder="用户年龄" ></el-input>
-    <el-button  @click="(user.age.num) ++ ">年龄触发</el-button>
+    <el-input v-model="user.age.num" type="number" placeholder="用户年龄"></el-input>
+    <el-button @click="(user.age.num) ++ ">年龄触发</el-button>
+    <el-input :prepend='name' v-model="age.num" @input="this.$forceUpdate()" type="text" placeholder="小明"></el-input>
+
+    <el-button @click="age.num ++ ">shallowReactive age.num++ </el-button>
+    <el-button @click="changeName">shallowReactive changeName</el-button>
+
+    <el-input v-model="mulitData.age.num" type="number" @input="this.$forceUpdate()" placeholder="小红"></el-input>
+    <el-button @click="changeName">shallowRef</el-button>
+    <el-button @click="mulitData.age.num ++ ">shallowRef</el-button>
 
   </div>
 </template>
 
 <script>
-import { reactive, ref, watch } from 'vue'
+import { reactive, ref, watch, watchEffect, shallowReactive, shallowRef, toRefs } from 'vue'
 export default {
+  methods: {
+
+  },
   setup () {
     const number = ref(0)
     const numberTwo = ref(1)
@@ -44,8 +55,43 @@ export default {
     // 监听整个reactive对象 只能监听到最新的结果，上一次的数据不会被监听到
     watch(() => user.age.num, (newVal, oldVal) => {
       console.log(newVal, oldVal)
+    }, { immediate: true })
+
+    // 进入页面就执行一次
+    const res = watchEffect(() => {
+      console.log('watchEffect')
+      console.log(user.age.num)
+    })
+
+    // 停止监听
+    res()
+
+    // 只处理第一层数据
+    const onlyFirstData = shallowReactive({
+      name: '小明+++',
+      age: {
+        num: 12
+      }
+    })
+    const changeName = () => {
+      onlyFirstData.name = '小红' + new Date()
+      mulitData.value.name = '小强' + new Date()
+
+      console.log(onlyFirstData.name)
+      console.log(mulitData.value.name)
+    }
+    // 只处理基本数据类型
+    const mulitData = shallowRef({
+      name: '小强',
+      age: {
+        num: 0
+      }
     })
     return {
+      changeName,
+      ...toRefs(onlyFirstData),
+      mulitData,
+      res,
       user,
       number,
       numberTwo

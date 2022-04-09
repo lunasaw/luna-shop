@@ -29,6 +29,15 @@ export default (app) => {
   app.use(ElRadioGroup)
   app.use(ElIcon)
   app.use(ElIconModules)
+  app.use(ElMessage)
   // 挂在Vue原型
   app.config.globalProperties.$message = ElMessage
+
+  // 统一注册Icon图标
+  for (const iconName in ElIconModules) {
+    if (Reflect.has(ElIconModules, iconName)) {
+      const item = ElIconModules[iconName]
+      app.component(iconName, item)
+    }
+  }
 }
