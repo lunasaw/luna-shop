@@ -1,5 +1,5 @@
 <template>
-  <el-form :model="form" label-width="120px">
+  <el-form :model="form" label-width="120px" class="back-child-g">
     <el-form-item label="Activity name">
       <el-input v-model="form.name" />
     </el-form-item>
@@ -73,3 +73,12 @@ export default {
   }
 }
 </script>
+<style scoped>
+.back-child-g {
+  background: rgb(175, 165, 234);
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  width: 80%;
+}
+</style>

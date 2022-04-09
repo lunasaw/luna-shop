@@ -43,9 +43,8 @@ export default {
 <style lang="less" scoped>
 .back-child {
   background: rgb(137, 158, 227);
-  padding: 10px;
-  margin: 1%;
   text-align: center;
+  margin: auto;
   width: 90%;
 }
 </style>

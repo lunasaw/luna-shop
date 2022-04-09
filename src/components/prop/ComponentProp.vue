@@ -1,5 +1,7 @@
 <template>
-    <compoennt-d></compoennt-d>
+    <div>
+      <compoennt-d></compoennt-d>
+    </div>
 </template>
 
 <script>
