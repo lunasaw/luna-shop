@@ -79,6 +79,7 @@ export default {
   text-align: center;
   padding: 10px;
   margin: auto;
+  margin-top: 10px;
   width: 80%;
 }
 </style>
