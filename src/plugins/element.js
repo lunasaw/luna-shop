@@ -4,7 +4,6 @@ import {
   ElMenuItemGroup, ElScrollbar, ElSelect, ElOption, ElOptionGroup, ElRadio, ElRadioGroup,
   ElIcon, ElCheckbox, ElSwitch, ElCheckboxGroup, ElCol, ElDatePicker, ElTimePicker
 } from 'element-plus'
-
 import * as ElIconModules from '@element-plus/icons-vue'
 
 export default (app) => {

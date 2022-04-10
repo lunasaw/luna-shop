@@ -1,0 +1,10 @@
+/* 登录注册 */
+#backcont{
+    background-image: url('@/assets/images/index_default.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    moz-background-size: cover;
+    min-height: 100vh;
+}

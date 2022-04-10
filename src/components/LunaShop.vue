@@ -1,5 +1,6 @@
 <template>
-  <h4>LunaShop</h4>
+  <div id="backcont"></div>
+
 </template>
 
 <script>
