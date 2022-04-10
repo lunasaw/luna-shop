@@ -6,6 +6,7 @@
     <el-button type='danger' @click='learnVue'>示例</el-button>
     <el-button type='primary' @click='composeVue'>组件示例</el-button>
     <el-button type='success' @click='composeProp'>组件传值</el-button>
+    <el-button type='info' @click='lunaShop'>LunaShop</el-button>
 
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -55,7 +56,8 @@ export default {
       this.$router.push('/learnVue')
     },
     composeVue () { this.$router.push('/composeVue') },
-    composeProp () { this.$router.push('/composeProp') }
+    composeProp () { this.$router.push('/composeProp') },
+    lunaShop () { this.$router.push('/lunaShop') }
   }
 }
 </script>

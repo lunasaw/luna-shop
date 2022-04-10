@@ -1,9 +1,12 @@
 <template>
+<div class="back-child-g">
+    你哈
+</div>
   <el-form :model="form" label-width="120px" class="back-child-g">
     <el-form-item label="Activity name">
-      <el-input v-model="form.name" />
+      <el-input v-model="form.name"  />
     </el-form-item>
-    <el-form-item label="Activity zone">
+    <el-form-item label=" Activity zone">
       <el-select v-model="form.region" placeholder="please select your zone">
         <el-option label="Zone one" value="shanghai" />
         <el-option label="Zone two" value="beijing" />
@@ -79,7 +82,10 @@ export default {
   text-align: center;
   padding: 10px;
   margin: auto;
+  border: 20px solid var(--el-border-color);
+  border-radius: 4px;
   margin-top: 10px;
+  box-shadow: var(--el-box-shadow);
   width: 80%;
 }
 </style>

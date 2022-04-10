@@ -6,6 +6,27 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <style type="text/css">
+        /* 自定义滚动样式 */
+      ::-webkit-scrollbar {
+        /* 滚动整体样式 */
+        width: 6px;
+        /* 高宽分别对应横竖滚动的尺寸 */
+        height: 1px;
+      }
+      ::-webkit-slider-thumb{
+        /* 滚动里面的小方块 */
+        border-radius: 6px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+      ::-webkit-scrollbar-track{
+        /* 轨道 */
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        background: #a6bdf4;
+      }
+    </style>
   </head>
   <body>
     <noscript>

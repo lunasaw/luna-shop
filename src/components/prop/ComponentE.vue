@@ -4,7 +4,9 @@
     <h4>{{name}}</h4>
     <el-form class="el-from">
       <el-form-item label="这里是提示头" label-width="120px">
-        <el-input v-model="fromFather" type="text"></el-input>
+        <el-input v-model="fromFather" type="text" :style="{
+          boxShadow: --el-box-shadow-dark,
+        }"></el-input>
         <el-input v-model="res" type="text"></el-input>
       </el-form-item>
     </el-form>
@@ -55,7 +57,7 @@ export default {
 
 <style lang="less" scoped>
 .back-child {
-  background: rgb(137, 158, 227);
+  background: rgb(220, 225, 239);
   text-align: center;
   margin: auto;
   width: 90%;

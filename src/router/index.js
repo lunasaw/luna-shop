@@ -17,6 +17,11 @@ const routes = [
     component: LearnVue
   },
   {
+    path: '/lunaShop',
+    name: 'lunaShop',
+    component: () => import(/* webpackChunkName:'lunaShop' */ '@/components/LunaShop.vue')
+  },
+  {
     path: '/composeProp',
     name: 'composeProp',
     component: ComposeProp

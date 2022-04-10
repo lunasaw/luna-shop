@@ -1,11 +1,11 @@
 <template>
- <div class="back-f">
-     <h3>我是ComponentF</h3>
-     <h4>{{res}}</h4>
-     <el-button @click="vuexBtnAsync">点击异步触发vuex</el-button>
-          <el-button @click="vuexBtnSync">点击同步触发vuex</el-button>
+  <div class="back-f">
+    <h3>我是ComponentF</h3>
+    <h4>{{res}}</h4>
+    <el-button @click="vuexBtnAsync">点击异步触发vuex</el-button>
+    <el-button @click="vuexBtnSync">点击同步触发vuex</el-button>
 
- </div>
+  </div>
 </template>
 
 <script>
