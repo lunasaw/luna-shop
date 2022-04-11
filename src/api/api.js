@@ -1,5 +1,5 @@
 // 共用地址
-const url = 'https://element.thexxdd.cn/api'
+const url = 'http://element.thexxdd.cn/api'
 
 // 首页请求
 // 为你优选
@@ -45,13 +45,12 @@ const urls = class {
     const login = `${url}/login`
 
     return {
-      urls,
       register,
       login
     }
   }
 }
-
+export default urls
 export {
   urls,
   getpreferurl,

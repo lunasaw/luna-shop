@@ -25,9 +25,12 @@
 </template>
 
 <script>
-import { reactive, toRefs } from '@vue/reactivity'
+import { reactive, toRefs, getCurrentInstance } from 'vue'
+import { ElMessage } from 'element-plus'
 export default {
   setup () {
+    const { proxy } = getCurrentInstance()
+
     const user = reactive({
       name: '',
       password: '',
@@ -36,8 +39,18 @@ export default {
     const regiserBtn = () => {
       user.regiser = !user.regiser
     }
-    const regisert = () => {
-      console.log(user.name, user.password)
+    const regisert = async () => {
+      const registerUrl = proxy.$urls.m().register
+      console.log(proxy.$urls.m().register)
+      const data = {
+        account: user.name,
+        password: user.password
+      }
+      console.log(registerUrl)
+      const res = await proxy.$request.doPost(registerUrl, data)
+      ElMessage.success(res.data.msg)
+      console.log(res)
+      new proxy.$tips(res.data.msg).showToast()
     }
     const login = () => {
       console.log(user.name, user.password)

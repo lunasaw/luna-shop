@@ -1,43 +1,36 @@
 import instance from './header'
-const request = class {
-  constructor (url, arg) {
-    this.url = url
-    this.arg = arg
-  }
-
-  // post
-  static doPost () {
-    return new Promise((resolve, reject) => {
-      instance
-        .post(this.url, this.arg)
-        .then((res) => {
-          console.log(res)
-          resolve(res)
-        })
-        .catch((err) => {
-          console.log(err)
-          reject(err)
-        })
-    })
-  }
-
-  // get
-  static doGet () {
-    return new Promise((resolve, reject) => {
-      instance
-        .get(this.url, this.arg)
-        .then((res) => {
-          console.log(res)
-          resolve(res)
-        })
-        .catch((err) => {
-          console.log(err)
-          reject(err)
-        })
-    })
-  }
+const doPost = (url, arg, success, fail) => {
+  return new Promise((resolve, reject) => {
+    console.log(url)
+    instance
+      .post(url, arg)
+      .then((res) => {
+        console.log(res)
+        resolve(res)
+      })
+      .catch((err) => {
+        console.log(err)
+        reject(err)
+      })
+  })
 }
-
-export default {
-  request
+const doGet = (url, arg, success, fail) => {
+  return new Promise((resolve, reject) => {
+    instance
+      .get(url, arg)
+      .then((res) => {
+        console.log(res)
+        resolve(res)
+      })
+      .catch((err) => {
+        console.log(err)
+        reject(err)
+      })
+  })
 }
+const request = {
+  doPost,
+  doGet
+}
+export default request
+export { doPost, doGet, request }

@@ -37,11 +37,13 @@ instance.interceptors.response.use(
     if (res.status === 200) {
       return Promise.resolve(res.data)
     } else {
-      return Promise.reject(res)
+      console.log(res)
+      return Promise.resolve(res)
     }
   },
   (err) => {
     if (err.response.status) {
+      console.log(err.response.status)
       switch (err.response.status) {
         // 401: 未登录
         // 未登录则跳转登录页面，并携带当前页面的路径
@@ -96,6 +98,4 @@ instance.interceptors.response.use(
     }
   }
 )
-export default {
-  instance
-}
+export default instance

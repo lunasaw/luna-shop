@@ -8,7 +8,8 @@ import axios from 'axios'
 import store from './store'
 import urls from './api/api'
 import request from './api/request'
-
+// 弹窗
+import tips from '@/config/message'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
   // console.log(config)
@@ -19,6 +20,7 @@ axios.interceptors.request.use(config => {
 
 const app = createApp(App).use(store)
 // 挂载全局
+app.config.globalProperties.$tips = tips
 app.config.globalProperties.$urls = urls
 app.config.globalProperties.$request = request
 app.config.globalProperties.$http = axios
