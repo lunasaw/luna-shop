@@ -6,17 +6,21 @@
     <el-button @click="messageLog">点击触发</el-button>
     <el-button @click="printLog">点击触发</el-button>
     <br>
+    <ComponentI></ComponentI>
     <ComponentE ref="val"></ComponentE>
   </div>
 </template>
 
 <script>
 import ComponentE from '@/components/prop/ComponentE.vue'
+import ComponentI from '@/components/prop/ComponentI.vue'
+
 import { ref } from '@vue/reactivity'
 import { provide } from '@vue/runtime-core'
 import { onMounted, getCurrentInstance } from 'vue'
 export default {
   components: {
+    ComponentI,
     ComponentE
   },
   methods: {
