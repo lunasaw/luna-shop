@@ -1,6 +1,6 @@
 <template>
 <div class="back-child-g">
-    你哈
+    子组件
 </div>
   <el-form :model="form" label-width="120px" class="back-child-g">
     <el-form-item label="Activity name">

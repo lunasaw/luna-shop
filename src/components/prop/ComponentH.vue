@@ -9,6 +9,7 @@
 import { ElMessage } from 'element-plus'
 import { onBeforeMount, onBeforeUnmount, onBeforeUpdate, onErrorCaptured, onMounted, onUpdated, ref } from '@vue/runtime-core'
 export default {
+  inject: ['user', 'todos'],
   setup () {
     console.log('setup 进入页面执行')
     onBeforeMount(() => {
@@ -43,7 +44,7 @@ export default {
   },
   created () {
     console.log('created 创建完成输出')
-    ElMessage.success('created 创建完成输出')
+    ElMessage.success('created 创建完成输出' + this.user + this.todos)
   },
   mounted () {
     console.log('mounted 挂载完成输出')
